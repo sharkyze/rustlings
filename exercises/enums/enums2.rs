@@ -1,11 +1,12 @@
 // enums2.rs
 // Make me compile! Execute `rustlings hint enums2` for hints!
 
-// I AM NOT DONE
-
 #[derive(Debug)]
 enum Message {
-    // TODO: define the different variants used below
+    Quit,
+    ChangeColor(usize, usize, usize),
+    Move { x: i32, y: i32 },
+    Echo(String),
 }
 
 impl Message {
@@ -16,10 +17,10 @@ impl Message {
 
 fn main() {
     let messages = [
-        Message::Move{ x: 10, y: 30 },
+        Message::Move { x: 10, y: 30 },
         Message::Echo(String::from("hello world")),
         Message::ChangeColor(200, 255, 255),
-        Message::Quit
+        Message::Quit,
     ];
 
     for message in &messages {
